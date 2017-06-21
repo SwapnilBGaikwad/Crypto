@@ -1,2 +1,2 @@
 # TryReact
-Sample App for React.
+Sample App in React.
