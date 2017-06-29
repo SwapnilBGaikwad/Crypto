@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ShoppingPage from "./app/component/ShoppingPage";
+import HomePage from "./app/component/HomePage";
 
-ReactDOM.render(<ShoppingPage/>, document.getElementById("root"));
+ReactDOM.render(<HomePage/>, document.getElementById("root"));
