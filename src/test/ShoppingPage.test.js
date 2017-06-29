@@ -5,7 +5,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import {Button} from "react-bootstrap";
-import ShoppingPage from "../component/ShoppingPage";
+import ShoppingPage from "../app/component/ShoppingPage";
 
 describe("Shopping Page test", () => {
     it("Should show popup", () => {
