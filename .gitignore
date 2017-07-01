@@ -4,3 +4,4 @@ TryReact.iml
 node_modules/
 build/npm-debug.log
 build/
+.DS_Store
