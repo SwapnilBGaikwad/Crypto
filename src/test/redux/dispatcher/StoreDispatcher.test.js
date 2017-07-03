@@ -23,4 +23,8 @@ describe("Store Dispatcher", () => {
         expect(nextState).toBe(0);
     });
 
+    it("reuturn same state as previous if action is not defines", () => {
+        let nextState = dispatcher(1, {type: 'SOMETHING'});
+        expect(nextState).toBe(1);
+    });
 });

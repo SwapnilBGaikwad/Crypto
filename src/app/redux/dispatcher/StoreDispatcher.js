@@ -1,4 +1,4 @@
-const dispatcher = (state, action) => {
+const dispatcher = (state = 0, action) => {
     if (action.type === 'INCREMENT') {
         return state + 1;
     }
@@ -6,7 +6,7 @@ const dispatcher = (state, action) => {
         return state - 1;
     }
     else {
-        return 0;
+        return state;
     }
 };
 
