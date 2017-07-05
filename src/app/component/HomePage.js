@@ -14,7 +14,7 @@ class HomePage extends React.Component {
         </Navbar.Header>);
         let item = (<NavItem href={'/'}>
             <span className="glyphicon glyphicon-list"/>
-            <span> New Algorithms</span>
+            <span> Encryption Algorithms</span>
         </NavItem>);
         return (
             <Navbar>
