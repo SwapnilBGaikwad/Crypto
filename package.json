@@ -1,7 +1,7 @@
 {
-  "name": "React-Testing",
+  "name": "Cryptography",
   "version": "0.0.1",
-  "description": "Sample ReactJS App",
+  "description": "Cryptography algorithms",
   "author": "Swapnil Gaikwad",
   "devDependencies": {
     "enzyme": "^2.9.1",
