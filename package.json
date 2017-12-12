@@ -1,5 +1,5 @@
 {
-  "name": "Cryptography",
+  "name": "Crypto",
   "version": "0.0.1",
   "description": "Cryptography algorithms",
   "author": "Swapnil Gaikwad",
@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "react": "^15.6.1",
-    "react-bootstrap": "^0.31.0",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-bootstrap": "^0.31.0"
   },
   "scripts": {
     "start": "react-scripts start",

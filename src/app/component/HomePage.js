@@ -1,31 +1,13 @@
-import React from "react";
-import {Nav, Navbar, NavItem} from "react-bootstrap";
-
+import React from "react"
+import PageHeader from "./PageHeader";
+import RSAAlgorithm from "./rsa/RSAAlgorithm"
 
 class HomePage extends React.Component {
-
     render() {
-        let header = (<Navbar.Header>
-            <Navbar.Brand>
-                <span className="glyphicon glyphicon-home"/>
-                <span> Home</span>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-        </Navbar.Header>);
-        let item = (<NavItem href={'/'}>
-            <span className="glyphicon glyphicon-list"/>
-            <span> Encryption Algorithms</span>
-        </NavItem>);
-        return (
-            <Navbar>
-                {header}
-                <Navbar.Collapse>
-                    <Nav>
-                        {item}
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-        );
+        return (<div>
+            <PageHeader/>
+            <RSAAlgorithm></RSAAlgorithm>
+        </div>);
     }
 }
 

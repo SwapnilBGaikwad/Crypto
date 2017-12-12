@@ -3,9 +3,9 @@ import expect from "expect";
 import {mount} from "enzyme";
 import {Navbar} from "react-bootstrap";
 
-import HomePage from "../app/component/HomePage";
+import HomePage from "../app/component/PageHeader";
 
-describe("HomePage", () => {
+describe("PageHeader", () => {
     it("render header with website name as GeekBook", () => {
         let homePage = mount(<HomePage/>);
         expect(homePage.find(Navbar.Header).length).toBe(1);
