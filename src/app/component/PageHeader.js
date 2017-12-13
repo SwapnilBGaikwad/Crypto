@@ -1,31 +1,16 @@
 import React from "react";
-import {Nav, Navbar, NavItem} from "react-bootstrap";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import darkBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
 
 
 class PageHeader extends React.Component {
 
     render() {
-        let header = (<Navbar.Header>
-            <Navbar.Brand>
-                <span className="glyphicon glyphicon-home"/>
-                <span> Home</span>
-            </Navbar.Brand>
-            <Navbar.Toggle/>
-        </Navbar.Header>);
-        let item = (<NavItem href={'/'}>
-            <span className="glyphicon glyphicon-list"/>
-            <span> Encryption Algorithms</span>
-        </NavItem>);
-        return (
-            <Navbar>
-                {header}
-                <Navbar.Collapse>
-                    <Nav>
-                        {item}
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
-        );
+        return (<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+            <AppBar title="Cryptography"/>
+        </MuiThemeProvider>)
     }
 }
 
