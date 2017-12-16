@@ -1,5 +1,5 @@
 import expect from "expect";
-import isPrime from '../../app/utils/Prime';
+import isPrime from './Prime';
 
 
 describe("isPrime tests", () => {
