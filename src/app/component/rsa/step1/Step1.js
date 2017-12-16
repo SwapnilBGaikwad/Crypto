@@ -9,9 +9,9 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
-import {onPChange, onQChange,checkValidity} from '../../actions/RSAActions';
+import {onPChange, onQChange,checkValidity} from './action/RSAStep1Actions';
 
-class StepsComponent extends React.Component {
+class Steps1 extends React.Component {
     render() {
         return (
             <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
@@ -61,4 +61,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StepsComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(Steps1);

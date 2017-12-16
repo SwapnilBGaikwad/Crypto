@@ -1,5 +1,5 @@
-import {CHECK_IS_PRIME, UPDATE_NUMBER} from '../../actions/RSAActions';
-import isPrime from '../../utils/Prime';
+import {CHECK_IS_PRIME, UPDATE_NUMBER} from '../action/RSAStep1Actions';
+import isPrime from '../../../../utils/Prime';
 
 let defaultState = {
     p: {
@@ -12,7 +12,7 @@ let defaultState = {
     }
 };
 
-export default function RSAReducer(state = {}, action) {
+export default function RsaStep1Reducer(state = {}, action) {
     switch (action.type) {
         case UPDATE_NUMBER:
             Object.assign(state, action.value);

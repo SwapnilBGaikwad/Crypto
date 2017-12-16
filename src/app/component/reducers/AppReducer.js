@@ -1,4 +1,4 @@
-import RSAReducer from './rsa/RsaReducer';
+import RSAReducer from '../rsa/step1/reducer/RsaStep1Reducer';
 
 import {combineReducers} from 'redux';
 

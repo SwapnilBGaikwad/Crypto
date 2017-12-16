@@ -5,7 +5,7 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Card, CardText, CardTitle} from 'material-ui/Card';
 
-import StepsComponent from './StepsComponent';
+import StepsComponent from './step1/Step1';
 
 class RSAAlgorithm extends React.Component {
     render() {
