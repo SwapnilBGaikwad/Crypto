@@ -3,4 +3,15 @@ import ReactDOM from "react-dom";
 import HomePage from "./app/component/HomePage";
 import "typeface-roboto";
 
-ReactDOM.render(<HomePage/>, document.getElementById("root"));
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
+import AppReducer from './app/reducers/AppReducer'
+
+let store = createStore(AppReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+ReactDOM.render(
+    <Provider store={store}>
+        <HomePage/>
+    </Provider>,
+    document.getElementById("root"));
