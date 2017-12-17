@@ -1,9 +1,17 @@
 language: node_js
 node_js:
-  - 6
+- 6
 cache:
   directories:
-    - node_modules
+  - node_modules
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
+deploy:
+  provider: heroku
+  api_key:
+    secure: AOAH8r4G9C9/UR8/EppYjMsEuzdf5OpjqfjJUFbtH0xvZeePv2ILZZ1KJ5RbWiWu6Zq891Py30I6IEdqHxlCqlny/IoSpUoFz/rnaX1UpxzNPCaigMrZKvaz4UDP549+YWIAMOAxPJFxtICbUroNSd6hAz+Kk+eBnUdA5hDu5ud2wCPDMaGyGWgExzSoTk9s+6yLxGv1jDJjhbAzQs5+ZfRU4qjHDOPHahymk68YYyEnc/l9EA9VkUdIPdW+t3sasagIF/9D0YoxnF2CL3uGs0RnxcGS+c8YKLa/IsRKUhO4zkjBsFitH1orutbvPzBX7fkgv1TdxLAffatJ5JhfrKqDKvcxrdZh85wWwr24P1zONoN0OdjdksX72ae7HgrWoN6RK7ImDbiXh4n9KbjiwzDdp25R7BtBHcKHd0bDXJp10XHvZkvY2ggL5ZjXWqnIb8j4mDQFh3FmLuAJupJbU+vKxtkOJLa4/vfcPRv9UwB6dwiupmXv1wfGehSKrfBo06+rE4cLlEj4HbafrugzD+9kwF4fjCcdppFtgGF3HDT6eRMtzvoPn2mO5SDqhv3kA5FvMwksBMpjCUSE+YCO4mP6iRLapTT3PGfwR16ZAquw746LAErrxTNTznyYSZ12f9Z7zE6bO6kX1RHiltMwsIP7jBSxfXhPuhcSzJ6CCSU=
+  app: encrypiton-calc
+  strategy: git
+  on:
+    repo: SwapnilBGaikwad/Crypto
