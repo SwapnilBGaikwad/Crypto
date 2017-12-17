@@ -11,11 +11,11 @@ function updateNumber(value) {
 }
 
 export function onPChange(no) {
-    return updateNumber({p: {value: no}})
+    return updateNumber({p: {value: parseInt(no, 10)}})
 }
 
 export function onQChange(no) {
-    return updateNumber({q: {value: no}})
+    return updateNumber({q: {value: parseInt(no, 10)}})
 }
 
 export function checkValidity() {

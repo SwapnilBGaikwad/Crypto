@@ -9,7 +9,8 @@ let defaultState = {
     q: {
         value: 0,
         errorText: ''
-    }
+    },
+    isValidNumbers: false
 };
 
 export default function RsaStep1Reducer(state = {}, action) {
@@ -20,9 +21,12 @@ export default function RsaStep1Reducer(state = {}, action) {
         case CHECK_IS_PRIME:
             if(!isPrime(state.p.value)) {
                 state.p.errorText = "p is not prime";
-            }
-            if(!isPrime(state.q.value)) {
+                state.isValidNumbers = false;
+            } else if(!isPrime(state.q.value)) {
                 state.q.errorText = "q is not prime";
+                state.isValidNumbers = false;
+            } else {
+                state.isValidNumbers = true;
             }
             return Object.assign({},state);
         default:

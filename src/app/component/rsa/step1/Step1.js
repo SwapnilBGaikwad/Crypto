@@ -5,9 +5,11 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
+import If from '../../common/If';
+
 import {checkValidity, onPChange, onQChange} from './action/RSAStep1Actions';
 
-const Steps1 = ({p, q, onPChange, onQChange, handleClick}) => {
+const Steps1 = ({p, q, isValidNumbers, onPChange, onQChange, handleClick}) => {
     return (<Card>
         <CardHeader title="Step 1" subtitle="Set p and q"/>
         <CardText>
@@ -27,13 +29,18 @@ const Steps1 = ({p, q, onPChange, onQChange, handleClick}) => {
         <CardActions>
             <FlatButton label="Set p and q" onClick={() => handleClick()}/>
         </CardActions>
+        <If when={isValidNumbers}>
+            <CardText>N = p * q : {p.value * q.value} </CardText>
+            <CardText>Phi(N) = (p - 1) * (q - 1) : {(p.value - 1) * (q.value - 1)} </CardText>
+        </If>
     </Card>);
 };
 
 const mapStateToProps = (state) => {
     return {
         p: state.rsa.p,
-        q: {errorText: state.rsa.q.errorText}
+        q: state.rsa.q,
+        isValidNumbers: state.rsa.isValidNumbers
     };
 };
 
