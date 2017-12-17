@@ -7,7 +7,6 @@ describe('RsaStep1Reducer specs', () => {
         let state = {rsa: 10};
         let action = {type: 'UPDATE_NUMBER', value: {rsa: 20}};
         let newState = RsaStep1Reducer(state, action);
-        console.log('newState : ' + JSON.stringify(newState));
         expect(newState.rsa).toBe(20);
     });
 });
