@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import HomePage from "./app/component/HomePage";
-import "typeface-roboto";
 
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
