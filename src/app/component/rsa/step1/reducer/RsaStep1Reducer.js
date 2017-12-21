@@ -36,7 +36,6 @@ export default function RsaStep1Reducer(state = {}, action) {
                 state.q.errorText = "q is not prime";
                 state.isValidNumbers = false;
             }
-            console.log('state : ' + JSON.stringify(state));
             return Object.assign({}, state);
         default:
             return Object.assign(defaultState, {});

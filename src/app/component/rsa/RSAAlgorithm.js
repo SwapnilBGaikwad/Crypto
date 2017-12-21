@@ -6,6 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import {Card, CardText, CardTitle} from 'material-ui/Card';
 
 import Steps1 from './step1/Step1';
+import Step2 from './step2/Step2';
 
 class RSAAlgorithm extends React.Component {
     render() {
@@ -22,6 +23,7 @@ class RSAAlgorithm extends React.Component {
                     </ul>
                 </CardText>
                 <Steps1/>
+                <Step2/>
             </Card>
         </MuiThemeProvider>)
     }

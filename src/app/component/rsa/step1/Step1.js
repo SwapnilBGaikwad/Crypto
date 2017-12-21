@@ -38,9 +38,9 @@ const Steps1 = ({p, q, isValidNumbers, onPChange, onQChange, handleClick}) => {
 
 const mapStateToProps = (state) => {
     return {
-        p: state.rsa.p,
-        q: state.rsa.q,
-        isValidNumbers: state.rsa.isValidNumbers
+        p: state.rsa.step1.p,
+        q: state.rsa.step1.q,
+        isValidNumbers: state.rsa.step1.isValidNumbers
     };
 };
 
