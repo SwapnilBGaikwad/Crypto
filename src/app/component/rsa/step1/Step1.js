@@ -46,15 +46,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onPChange: (no) => {
-            dispatch(onPChange(no));
-        },
-        onQChange: (no) => {
-            dispatch(onQChange(no));
-        },
-        handleClick: () => {
-            dispatch(checkValidity());
-        }
+        onPChange: onPChange(dispatch),
+        onQChange: onQChange(dispatch),
+        handleClick: checkValidity(dispatch)
     };
 };
 

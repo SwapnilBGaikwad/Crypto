@@ -19,16 +19,25 @@ export default function RsaStep1Reducer(state = {}, action) {
             Object.assign(state, action.value);
             return state;
         case CHECK_IS_PRIME:
-            if(!isPrime(state.p.value)) {
+            state.isValidNumbers = true;
+            if (state.p.value === null || state.p.value <= 0) {
+                state.p.errorText = "Invalid p value";
+                state.isValidNumbers = false;
+            }
+            if (state.q.value === null || state.q.value <= 0) {
+                state.q.errorText = "Invalid q value";
+                state.isValidNumbers = false;
+            }
+            if (!isPrime(state.p.value)) {
                 state.p.errorText = "p is not prime";
                 state.isValidNumbers = false;
-            } else if(!isPrime(state.q.value)) {
+            }
+            if (!isPrime(state.q.value)) {
                 state.q.errorText = "q is not prime";
                 state.isValidNumbers = false;
-            } else {
-                state.isValidNumbers = true;
             }
-            return Object.assign({},state);
+            console.log('state : ' + JSON.stringify(state));
+            return Object.assign({}, state);
         default:
             return Object.assign(defaultState, {});
     }
