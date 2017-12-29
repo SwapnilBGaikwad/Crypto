@@ -43,16 +43,15 @@ class Encryption extends Component {
 
 const mapStateToProps = (state) => {
     const message = state.rsa.step4.message;
-    let encryptedMessage = undefined;
     if(message === undefined) {
-        return encryptedMessage;
+        return undefined;
     }
 
     const {p, q} = state.rsa.step1;
     const e = state.rsa.step2.e;
     const N = parseInt(p.value,10) * parseInt(q.value,10);
     const publicKey = {key: e, N};
-    encryptedMessage = encryptMessage(message, publicKey);
+    const encryptedMessage = encryptMessage(message, publicKey);
     return {
         encryptedMessage
     };

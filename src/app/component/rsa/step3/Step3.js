@@ -28,7 +28,7 @@ const Step3 = ({d, n, possibleD = [], errorText, onDChange, handleClick}) => {
                 <CardActions>
                     <FlatButton label="Set d" onClick={() => handleClick(possibleD)}/>
                 </CardActions>
-                <If when={errorText === undefined}>
+                <If when={errorText === ''}>
                     <CardText>Private key is (d , n) = {d + ', ' + n} </CardText>
                 </If>
             </CardText>

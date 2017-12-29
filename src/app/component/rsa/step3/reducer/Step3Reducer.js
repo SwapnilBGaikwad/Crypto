@@ -9,7 +9,7 @@ const Step3Reducer = (state = {}, action) => {
             if (!action.possibleD.find(x => x === state.d)) {
                 errorText = 'Choose d from given list';
             } else {
-                errorText = undefined;
+                errorText = '';
             }
             return {...state, errorText};
         default:
