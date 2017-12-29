@@ -7,7 +7,8 @@ import TextField from 'material-ui/TextField';
 import {connect} from 'react-redux';
 
 import {onMessageSubmit} from './action/Step4Actions';
-import {encryptMessage} from './utils/EncryptMessage';
+import {encryptMessage} from '../utils/EncryptMessage';
+import If from '../../common/If';
 
 class Encryption extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class Encryption extends Component {
     render() {
         return (
             <Card>
-                <CardHeader title="Step 4" subtitle="Enter Message"/>
+                <CardHeader title="Step 4"/>
                 <CardText>
                     Enter message to encrypt
                     <div>
@@ -26,12 +27,14 @@ class Encryption extends Component {
                             this.setState({message: e.target.value})
                         }}/>
                     </div>
-                    <CardText>
-                        Encrypted Message: {this.props.encryptedMessage}
-                    </CardText>
                     <CardActions>
                         <FlatButton label="Set Message" onClick={() => this.props.handleSubmit(this.state.message)}/>
                     </CardActions>
+                    <If when={this.props.encryptedMessage !== undefined}>
+                        <CardText>
+                            Encrypted Message: {this.props.encryptedMessage}
+                        </CardText>
+                    </If>
                 </CardText>
             </Card>
         );
@@ -39,11 +42,17 @@ class Encryption extends Component {
 }
 
 const mapStateToProps = (state) => {
+    const message = state.rsa.step4.message;
+    let encryptedMessage = undefined;
+    if(message === undefined) {
+        return encryptedMessage;
+    }
+
     const {p, q} = state.rsa.step1;
     const e = state.rsa.step2.e;
-    const publicKey = {e, N: parseInt(p.value,10) * parseInt(q.value,10)};
-    const message = state.rsa.step4.message;
-    const encryptedMessage = encryptMessage(message, publicKey);
+    const N = parseInt(p.value,10) * parseInt(q.value,10);
+    const publicKey = {key: e, N};
+    encryptedMessage = encryptMessage(message, publicKey);
     return {
         encryptedMessage
     };

@@ -1,25 +1,20 @@
-import {UPDATE_D_VALUE,VALIDATE_D_VALUE} from '../actions/RSAStep3Actions';
+import {UPDATE_D_VALUE, VALIDATE_D_VALUE} from '../actions/RSAStep3Actions';
 
 const Step3Reducer = (state = {}, action) => {
     switch (action.type) {
         case UPDATE_D_VALUE:
-            state.d = parseInt(action.d,10);
-            break;
+            return {...state, d: parseInt(action.d, 10)};
         case VALIDATE_D_VALUE:
-            if(!action.possibleD.find(x => x === state.d)) {
-                state.errorText = 'Choose d from given list';
+            let errorText;
+            if (!action.possibleD.find(x => x === state.d)) {
+                errorText = 'Choose d from given list';
             } else {
-                state.errorText = undefined;
+                errorText = undefined;
             }
-            break;
+            return {...state, errorText};
         default:
-            return {
-                d: 0,
-                possibleD: [],
-                errorText: ''
-            };
+            return state;
     }
-    return Object.assign({}, state);
 };
 
 export default Step3Reducer;
