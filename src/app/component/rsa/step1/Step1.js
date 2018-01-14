@@ -16,12 +16,12 @@ const Steps1 = ({p, q, isValidNumbers, onPChange, onQChange, handleClick}) => {
             Choose p and q as prime numbers
             <br/>
             <div>
-                <TextField hintText="p value" type={'number'}
+                <TextField id="p" hintText="p value" type={'number'}
                            onChange={(e) => onPChange(e.target.value)}
                            errorText={p.errorText}/>
             </div>
             <div>
-                <TextField hintText="q value" type={'number'}
+                <TextField id="q" hintText="q value" type={'number'}
                            onChange={(e) => onQChange(e.target.value)}
                            errorText={q.errorText}/>
             </div>

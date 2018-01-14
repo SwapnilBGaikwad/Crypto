@@ -23,7 +23,7 @@ class Encryption extends Component {
                 <CardText>
                     Enter message to encrypt
                     <div>
-                        <TextField name={'message'} type={'number'} onChange={(e) => {
+                        <TextField id="encrypt" name={'message'} type={'number'} onChange={(e) => {
                             this.setState({message: e.target.value})
                         }}/>
                     </div>

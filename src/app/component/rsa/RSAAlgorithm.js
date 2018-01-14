@@ -15,14 +15,14 @@ class RSAAlgorithm extends React.Component {
     render() {
         return (<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
             <Card>
-                <CardTitle title="RSA" subtitle="Asymmetric Algorithm"/>
+                <CardTitle title="RSA" subtitle="Asymmetric Encryption Algorithm"/>
                 <CardText>
                     <ul>
                         <li>Asymmetric algorithm has two different keys public and private</li>
-                        <li>Receiver share the public to sender</li>
-                        <li>Sender encrypt data using receiver's public and send it</li>
-                        <li>Encrypted message can be decrypted only by private key</li>
-                        <li>Receiver use the private key to decrypt message => Plain Text</li>
+                        <li>Receiver share the <b>public key</b> to sender</li>
+                        <li>Sender encrypt data using receiver's public key and send it</li>
+                        <li>Encrypted message can be decrypted only by <b>private key</b> known only by Receiver</li>
+                        <li>Receiver use the private key to decrypt message to get <b>Plain Text</b></li>
                     </ul>
                 </CardText>
                 <Steps1/>

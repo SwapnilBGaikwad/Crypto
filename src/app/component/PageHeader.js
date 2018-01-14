@@ -9,7 +9,7 @@ class PageHeader extends React.Component {
 
     render() {
         return (<MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-            <AppBar title="Cryptography"/>
+            <AppBar title="Encryption Calculator"/>
         </MuiThemeProvider>)
     }
 }

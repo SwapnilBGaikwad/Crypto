@@ -14,14 +14,14 @@ import If from '../../common/If';
 const Step2 = ({e, n ,possibleE = [], errorText, validE, onEChange, handleClick}) => {
     return (
         <Card>
-            <CardHeader title="Step 2" subtitle="Choose public key e"/>
+            <CardHeader title="Step 2" subtitle="Choose public key e (Encryption Key)"/>
             <CardText>
-                Choose e (Encryption Key) from below values
+                Choose e from below values
                 <div>
-                    <TextField disabled={true} value={possibleE}/>
+                    <TextField id="Evals" disabled={true} value={possibleE}/>
                 </div>
                 <div>
-                    <TextField hintText="e value" type={'number'}
+                    <TextField id="e" hintText="e value" type={'number'}
                                onChange={(e) => onEChange(e.target.value)}
                                errorText={errorText}/>
                 </div>
