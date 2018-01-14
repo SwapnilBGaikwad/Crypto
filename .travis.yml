@@ -10,7 +10,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: hIzMcS4Kth6SjjPw4nf/q8xwVcqVLjDrU70vsDD7dShRTbcvlB723VC8Aer2J8bwszPDhRlx2imcMe6bCUVm5nkf0bSEQaqtCRJbpOSQECwkDNixDbAt3rfvEgfXshjgNAv2no7J5d7vbNGzeWdLV2OuxLLdggACqc1+bSMsEvvxKDiRDGcYYbrQ8am4z1IDnOChYT0WcVcfkHX6oKFnH/sRbeM2QHwzhEYme3/+sSY8PFU4uzB5zTlxaebMLp+y3N+vSCB0x+JYMNin3up09Th2fqB/PgWtx75QRRD05jSvGEkgS2AkyGshvvk1++Ts0UZeLukU4FCQk9blr6M6rCg3hEcn5gf6spCJfRnTJ/MofIK+KfsudWMv6+ydliwXgVglqMwIGM/QERcbeM1LO7gnhoOTJ99PqtXy4w1GvFCXzp6hI/0gkuV/UZ8dLNhhT3BMMuVD9OnkSVUJ5O3SQ1k8r5SM5PSjd/fZwxqO7IIkcOHqG8H4dPhuN8preXDnesGG5kC5u88pBFesseTHi7xLYdXM4qcEuyC6NL9eVpol4cM/XRvk8AeXVF3tj9n6zWquhcFnK9+zETDF72na4BeS0kWqCMeY7lmDLuFLWmdBSGLDvF4156ElOrbT2Gx0xznWhwTc8awp15Jv7vBMkl8qcG/SfZz8nlOWKr8Q/xI=
-  app: encrypiton-calc
+    secure: $HEROKU_KEY
+  app: encryption-calc
   on:
     repo: SwapnilBGaikwad/Crypto
