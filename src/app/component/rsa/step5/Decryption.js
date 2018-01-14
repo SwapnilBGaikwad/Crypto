@@ -22,7 +22,7 @@ class Decryption extends Component {
 const mapStateToProps = (state) => {
     const message = state.rsa.step4.message;
     if(message === undefined) {
-        return undefined;
+        return {};
     }
 
     const {p, q} = state.rsa.step1;
