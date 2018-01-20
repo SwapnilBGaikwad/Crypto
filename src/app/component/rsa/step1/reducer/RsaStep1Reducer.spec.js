@@ -1,6 +1,6 @@
 import expect from "expect";
 
-import RsaStep1Reducer from './RsaStep1Reducer';
+import RsaStep1Reducer from './Step1Reducer';
 
 describe('RsaStep1Reducer specs', () => {
     it('should update number in state if UPDATE_NUMBER after action', () => {

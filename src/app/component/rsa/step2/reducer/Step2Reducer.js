@@ -3,20 +3,29 @@ import {UPDATE_E_VALUE,VALIDATE_E_VALUE} from '../actions/RSAStep2Actions';
 const Step2Reducer = (state = {},action) => {
     switch (action.type) {
         case UPDATE_E_VALUE:
-            state.e = parseInt(action.possibleE,10);
-            break;
+            return {
+                ...state,
+                e: parseInt(action.possibleE,10)
+            };
         case VALIDATE_E_VALUE:
+            let errorText,validE;
+            console.log('action.possibleE : ', action.possibleE);
+            console.log('action.state.e : ', state.e);
             if(!action.possibleE.find(x => x === state.e)) {
-                state.errorText = 'Choose e from given list';
+                errorText = 'Choose e from given list';
+                validE = false;
             } else {
-                state.errorText = undefined;
-                state.validE = true
+                errorText = undefined;
+                validE = true;
             }
-            break;
+            return {
+                ...state,
+              errorText,
+              validE
+            };
         default:
-            break;
+            return state;
     }
-    return Object.assign({}, state);
 };
 
 export default Step2Reducer;

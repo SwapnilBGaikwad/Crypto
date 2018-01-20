@@ -13,7 +13,11 @@ let defaultState = {
     isValidNumbers: false
 };
 
-export default function RsaStep1Reducer(state = {}, action) {
+const isValid = (value) => {
+    return value !== null && value > 0;
+};
+
+export default function RsaStep1Reducer(state = defaultState, action) {
     switch (action.type) {
         case UPDATE_NUMBER:
             Object.assign(state, action.value);
@@ -25,11 +29,11 @@ export default function RsaStep1Reducer(state = {}, action) {
             p.value = state.p.value;
             q.value = state.q.value;
 
-            if (state.p.value === null || state.p.value <= 0) {
+            if (!isValid(state.p.value)) {
                 p.errorText = "Invalid p value";
                 isValidNumbers = false;
             }
-            if (state.q.value === null || state.q.value <= 0) {
+            if (!isValid(state.q.value)) {
                 q.errorText = "Invalid q value";
                 isValidNumbers = false;
             }
@@ -45,6 +49,6 @@ export default function RsaStep1Reducer(state = {}, action) {
                 p,q,isValidNumbers
             };
         default:
-            return Object.assign(defaultState, {});
+            return state;
     }
 }
